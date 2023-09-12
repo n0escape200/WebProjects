@@ -1,0 +1,73 @@
+.FilterContainer {
+  display: flex;
+  justify-content: center;
+}
+.FilterContainer > .container > .top {
+  display: flex;
+  flex-wrap: wrap;
+  height: 80px;
+}
+
+.FilterContainer > .container > .top > .spacer {
+  border-left: 1px solid grey;
+  height: 80px;
+}
+
+.FilterContainer > .container > .top > .topLabel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 10px;
+  padding: 0 40px 0 40px;
+  align-items: center;
+}
+
+.FilterContainer > .container > .top > .topLabel:hover {
+  background-color: aquamarine;
+}
+
+.middleLabel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  max-width: 150px;
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  z-index: 1;
+  background-color: rgb(232, 232, 232);
+  top: 100%;
+  left: 0;
+  width: 100%;
+  font-size: 21px;
+}
+
+.dropdown > span {
+  border: 0.01em solid black;
+  padding: 5px;
+}
+
+.middleLabel > .label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 21px;
+  padding: 5px;
+  background-color: rgb(232, 232, 232);
+  border: 0.01em solid black;
+  border-radius: 0.1em;
+}
+
+.dummieText {
+  color: grey;
+}
+
+.dropdownDisplay {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdownHide {
+  display: none;
+}
