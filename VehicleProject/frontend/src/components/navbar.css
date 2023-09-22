@@ -7,21 +7,20 @@
   padding: 10px;
 }
 
-.NavBarContainer > .container > .left > #title {
+#title {
   font-size: 25px;
   font-weight: 600;
   padding: 5px;
 }
 
-.NavBarContainer > .container > .right {
+.right {
   display: flex;
   align-items: center;
   gap: 10px;
   padding-right: 10px;
   font-size: 17px;
 }
-
-.NavBarContainer > .container > .right > .sellBtn {
+.sellBtn {
   background-color: rgb(114, 204, 225);
   text-shadow: 1px 1px 1px black;
   padding: 10px;

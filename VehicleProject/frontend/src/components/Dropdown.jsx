@@ -3,7 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import "./Dropdown.css";
 
-const Dropdown = ({ options }) => {
+const Dropdown = ({ options, onSelect }) => {
+  useEffect(() => {
+    onSelect(null);
+  }, []);
   const [visible, setVisible] = useState(false); //checks if the dropdown is visible or not
   const [search, setSearch] = useState(""); //storage for the input provided
   let [filteredArray, setFilteredArray] = useState([]); //storage for the array that's been filtered based on the input
@@ -53,11 +56,11 @@ const Dropdown = ({ options }) => {
     const value = event.target.textContent;
     setTopOption(value);
     setVisible(false);
+    onSelect(value);
   };
 
   return (
-    <div ref={clickRef} className="dropdownContainer">
-      <span className="lable">Chassis</span>
+    <div value={topOption} ref={clickRef} className="dropdownContainer">
       <div className="dropdown">
         {visible ? (
           <input

@@ -1,0 +1,10 @@
+.itemContainer {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+img {
+  height: 120px;
+  width: 180px;
+}
