@@ -4,7 +4,7 @@ import Item from "../components/Item.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList, faTableCells } from "@fortawesome/free-solid-svg-icons";
 const HomeList = () => {
-  const [view, setView] = useState(false);
+  const [view, setView] = useState(true);
   return (
     <div className="homelistContainer">
       <div className="listContainer">
@@ -29,19 +29,13 @@ const HomeList = () => {
           />
         </div>
         <div className="bottom">
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
+          <Item style={view} />
+          <Item style={view} />
+          <Item style={view} />
+          <Item style={view} />
+          <Item style={view} />
+          <Item style={view} />
+          <Item style={view} />
         </div>
       </div>
     </div>

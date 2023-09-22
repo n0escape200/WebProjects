@@ -1,8 +1,14 @@
-import React from "react";
+import { useEffect, useRef } from "react";
 import "./Item.css";
-const Item = () => {
+const Item = (style) => {
+  const viewStyle = useRef();
+
+  useEffect(() => {
+    if (style) {
+    }
+  }, [style]);
   return (
-    <div className="itemContainer">
+    <div ref={viewStyle} className="itemContainer1">
       <img src="https://i.imgur.com/LYeYqEJ.jpeg" alt="" />
       <div className="description">
         <div>2020</div>
