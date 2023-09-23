@@ -1,21 +1,38 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Item.css";
-const Item = (style) => {
-  const viewStyle = useRef();
-
+const Item = ({ view }) => {
+  const widthRef = useRef();
+  const state = view ? "itemContainer1" : "itemContainer2";
+  const [width, setWidth] = useState(null);
   useEffect(() => {
-    if (style) {
-    }
-  }, [style]);
+    setWidth(widthRef.current.clientWidth);
+  }, [view]);
+  const nrOfImg = Math.floor(width / 205);
+
   return (
-    <div ref={viewStyle} className="itemContainer1">
-      <img src="https://i.imgur.com/LYeYqEJ.jpeg" alt="" />
-      <div className="description">
-        <div>2020</div>
-        <div>8600km</div>
-        <div>Diesel</div>
-        <div>2 925 cm3</div>
-        <div>72 000 eur</div>
+    <div className={state}>
+      <div ref={widthRef} className="images">
+        {view ? (
+          <img src="https://i.imgur.com/LYeYqEJ.jpeg" alt="" />
+        ) : (
+          Array.from({ length: nrOfImg }, (_, index) => {
+            return (
+              <img key={index} src="https://i.imgur.com/LYeYqEJ.jpeg" alt="" />
+            );
+          })
+        )}
+      </div>
+
+      <div className="rightSide">
+        <div className="description">
+          <div id="head">The title of the fucking car</div>
+          <div id="info">•2020</div>
+          <div id="info">•8600 km</div>
+          <div id="info">•Diesel</div>
+          <div id="info">•2 925 cm3</div>
+          <div id="info">•72 000 eur</div>
+        </div>
+        <div className="contact">Contact Seller</div>
       </div>
     </div>
   );
