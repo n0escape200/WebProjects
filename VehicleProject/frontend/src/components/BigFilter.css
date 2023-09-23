@@ -1,0 +1,15 @@
+.BigfilterContainer > .filter {
+  background-color: #e0e0e0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-evenly;
+  padding: 50px 150px 50px 150px;
+}
+
+.results {
+  margin: 30px 420px 0 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

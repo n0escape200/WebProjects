@@ -1,4 +1,5 @@
 import React from "react";
+import "./Home.css";
 import Navbar from "../../components/navbar.jsx";
 import Filter from "../../components/Filter.jsx";
 import HomeList from "../../components/HomeList.jsx";

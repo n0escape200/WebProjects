@@ -1,0 +1,60 @@
+.DetailItemContainer > .content {
+  display: flex;
+  border: 0.01em solid black;
+  align-items: center;
+  padding: 5px;
+}
+
+.DetailItemContainer > .content > .details {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.DetailItemContainer > .content > .details > .left {
+  margin-left: 20px;
+}
+
+.DetailItemContainer > .content > .details > .right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+#name {
+  font-weight: 600;
+  font-size: 21px;
+}
+#underDesc {
+  color: grey;
+  font-size: 14px;
+}
+#promote {
+  background-color: #10e0c4;
+  width: fit-content;
+  border-radius: 3px;
+  padding: 5px 10px 5px 10px;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.66);
+  margin: 10px 0 10px 0;
+}
+#kmFuel {
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+#place {
+  color: #14de5e;
+  letter-spacing: 0.03em;
+  text-shadow: 2px 2px 4px rgba(76, 252, 255, 0.47);
+}
+
+#price {
+  font-size: 25px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+#priceType {
+  font-size: 15px;
+}
