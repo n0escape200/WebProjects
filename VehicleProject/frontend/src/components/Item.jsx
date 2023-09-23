@@ -13,11 +13,18 @@ const Item = ({ view }) => {
     <div className={state}>
       <div ref={widthRef} className="images">
         {view ? (
-          <img src="https://i.imgur.com/LYeYqEJ.jpeg" alt="" />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2hY0zhnie-vaJ3Ce_y5MZynG2jNCgY6WjUw&usqp=CAU"
+            alt=""
+          />
         ) : (
           Array.from({ length: nrOfImg }, (_, index) => {
             return (
-              <img key={index} src="https://i.imgur.com/LYeYqEJ.jpeg" alt="" />
+              <img
+                key={index}
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2hY0zhnie-vaJ3Ce_y5MZynG2jNCgY6WjUw&usqp=CAU"
+                alt=""
+              />
             );
           })
         )}

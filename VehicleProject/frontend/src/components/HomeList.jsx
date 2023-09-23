@@ -48,6 +48,7 @@ const HomeList = () => {
           />
         </div>
         <div ref={widthRef} className="bottom">
+          <div className="daily">✦NEW DAILY VEHICLES</div>
           {Array.from({ length: nrOfItems }, (_, index) => {
             return <Item key={index} view={view} />;
           })}
