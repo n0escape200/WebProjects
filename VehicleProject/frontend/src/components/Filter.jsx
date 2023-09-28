@@ -8,6 +8,7 @@ import {
   faTruckMoving,
 } from "@fortawesome/free-solid-svg-icons";
 import Dropdown from "./Dropdown.jsx";
+import { carBrands } from "../data/models.jsx";
 
 const Filter = () => {
   const [currentFilter, setCurrentFilter] = useState([
@@ -52,7 +53,7 @@ const Filter = () => {
           <div className="filterContainer">
             <div className="filterLabel">
               <div>Brand</div>
-              <Dropdown onSelect={(value) => {}} options={["Car69", "Car2"]} />
+              <Dropdown onSelect={(value) => {}} options={carBrands} />
             </div>
 
             <div className="filterLabel">

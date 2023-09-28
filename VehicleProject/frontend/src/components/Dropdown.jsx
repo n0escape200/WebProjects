@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import "./Dropdown.css";
 
-const Dropdown = ({ options, onSelect }) => {
+const Dropdown = ({ options, onSelect, tag = "Select..." }) => {
   useEffect(() => {
     onSelect(null);
   }, []);
@@ -11,7 +11,7 @@ const Dropdown = ({ options, onSelect }) => {
   const [search, setSearch] = useState(""); //storage for the input provided
   let [filteredArray, setFilteredArray] = useState([]); //storage for the array that's been filtered based on the input
   const clickRef = useRef(null); //used in checking the outside clicks
-  const [topOption, setTopOption] = useState("Select ..."); // storage for what the user will select or has selected
+  const [topOption, setTopOption] = useState(tag); // storage for what the user will select or has selected
 
   /*This part of the code just keeps 
     track of the input from the user */

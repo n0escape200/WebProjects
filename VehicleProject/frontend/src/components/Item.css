@@ -16,7 +16,7 @@
   align-items: center;
 }
 
-img {
+.images > img {
   height: 120px;
   width: 180px;
   -webkit-box-shadow: 0px 7px 12px -5px rgba(0, 0, 0, 0.54);
