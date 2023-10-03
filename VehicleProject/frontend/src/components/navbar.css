@@ -19,10 +19,46 @@
   gap: 10px;
   padding-right: 10px;
   font-size: 17px;
+  position: relative;
 }
 .sellBtn {
   background-color: rgb(114, 204, 225);
   text-shadow: 1px 1px 1px black;
   padding: 10px;
   color: white;
+}
+
+#icon:hover {
+  color: aqua;
+  cursor: pointer;
+  scale: 1.5;
+  transition: 0.3s;
+}
+
+#icon:active {
+  color: red;
+}
+
+.auth {
+  position: absolute;
+  top: 150%;
+  border: 0.01em solid black;
+  padding: 15px;
+}
+
+#reg {
+  color: #19b2ff;
+}
+
+#reg:hover {
+  color: red;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+#reg:active {
+  scale: 1.1;
+  color: green;
+  transition: 1s;
 }
