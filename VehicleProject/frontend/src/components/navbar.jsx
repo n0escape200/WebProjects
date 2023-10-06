@@ -1,11 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faStar } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 import "./navbar.css";
 
 const navbar = () => {
   const [auth, setAuth] = useState(false);
   const [form, setForm] = useState(false);
+
+  const logIn = async () => {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const info = {
+      username: username,
+      password: password,
+    };
+    await axios
+      .post("http://localhost:5500/api_V1.0/auth/login", info, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log("first");
+        console.log(err);
+      });
+  };
+
   return (
     <div className="NavBarContainer">
       <div className="container">
@@ -22,13 +44,14 @@ const navbar = () => {
             />
           </span>
           <span id="text">Favourites (0)</span>
-          <FontAwesomeIcon
-            onClick={() => {
-              setAuth(!auth);
-            }}
-            id="icon"
-            icon={faUser}
-          />
+          <div id="icon">
+            <FontAwesomeIcon
+              onClick={() => {
+                setAuth(!auth);
+              }}
+              icon={faUser}
+            />
+          </div>
           <span className="sellBtn" id="text">
             + Sell now
           </span>
@@ -39,16 +62,19 @@ const navbar = () => {
                   <>
                     <div className="authLabel">
                       <div>Username</div>
-                      <input type="text" name="" id="" />
+                      <input type="text" name="" id="username" />
                     </div>
                     <div className="authLabel">
                       <div>Password</div>
-                      <input type="text" name="" id="" />
+                      <input type="password" name="" id="password" />
                     </div>
                     <input
                       style={{ marginTop: 20 }}
                       type="button"
                       value="Login"
+                      onClick={() => {
+                        logIn();
+                      }}
                     />
                     <div>
                       No account yet?

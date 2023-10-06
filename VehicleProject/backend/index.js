@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import create from "./routes/createPost.js";
 import auth from "./routes/auth.js";
+import cookieParser from "cookie-parser";
+import cors from "cors";
 const app = express();
 dotenv.config();
 
@@ -16,6 +18,8 @@ const connect = async () => {
   }
 };
 
+app.use(cors());
+app.use(cookieParser());
 app.use(express.json());
 app.use("/api_V1.0/createPost", create);
 app.use("/api_V1.0/auth", auth);

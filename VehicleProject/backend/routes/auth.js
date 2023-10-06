@@ -3,9 +3,13 @@ import { login, register } from "../controller/auth.js";
 
 const router = express.Router();
 
-//CREATE
+//REGISTER user
 router.post("/register", register);
-//GET
-router.get("/login", login);
+//LOGIN user
+router.post("/login", login);
+//GET cookie
+router.get("/cookie", (req, res) => {
+  res.status(200).json(req.cookies.User);
+});
 
 export default router;
