@@ -33,15 +33,12 @@ const Filter = () => {
   useEffect(() => {
     for (let i = 0; i < currentFilter.length; i++) {
       const element = currentFilter[i];
-      document.getElementById(element[0] + "Emojie").style.color = "black";
-      document.getElementById(element[0] + "Label").style.color = "black";
-      document.getElementById(element[0] + "Top").style.backgroundColor =
-        "white";
+      document.getElementById(element[0] + "Emojie").style.color = "#a2c3b6";
+      document.getElementById(element[0] + "Label").style.color = "#a2c3b6";
+
       if (element[1] == 1) {
-        document.getElementById(element[0] + "Emojie").style.color = "#a1e3ff";
-        document.getElementById(element[0] + "Label").style.color = "#a1e3ff";
-        document.getElementById(element[0] + "Top").style.backgroundColor =
-          "#F7F7F7";
+        document.getElementById(element[0] + "Emojie").style.color = "white";
+        document.getElementById(element[0] + "Label").style.color = "white";
       }
     }
   }, [currentFilter]);
@@ -52,12 +49,12 @@ const Filter = () => {
         return (
           <div className="filterContainer">
             <div className="filterLabel">
-              <div>Brand</div>
+              <div id="labelText">Brand</div>
               <Dropdown onSelect={(value) => {}} options={carBrands} />
             </div>
 
             <div className="filterLabel">
-              <div>Model</div>
+              <div id="labelText">Model</div>
               <Dropdown onSelect={(value) => {}} options={["Car9"]} />
             </div>
           </div>
@@ -66,16 +63,16 @@ const Filter = () => {
         return (
           <div className="filterContainer">
             <div className="filterLabel">
-              <div>Vehicle type</div>
+              <div id="labelText">Vehicle type</div>
               <Dropdown onSelect={(value) => {}} options={["Car69", "Car2"]} />
             </div>
 
             <div className="filterLabel">
-              <div>Brand</div>
+              <div id="labelText">Brand</div>
               <Dropdown onSelect={(value) => {}} options={["Car9"]} />
             </div>
             <div className="filterLabel">
-              <div>Type</div>
+              <div id="labelText">Type</div>
               <Dropdown onSelect={(value) => {}} options={["Car9"]} />
             </div>
           </div>
@@ -84,16 +81,16 @@ const Filter = () => {
         return (
           <div className="filterContainer">
             <div className="filterLabel">
-              <div>Work type</div>
+              <div id="labelText">Work type</div>
               <Dropdown onSelect={(value) => {}} options={["Car69", "Car2"]} />
             </div>
 
             <div className="filterLabel">
-              <div>Brand</div>
+              <div id="labelText">Brand</div>
               <Dropdown onSelect={(value) => {}} options={["Car9"]} />
             </div>
             <div className="filterLabel">
-              <div>Fuel</div>
+              <div id="labelText">Fuel</div>
               <Dropdown onSelect={(value) => {}} options={["Car9"]} />
             </div>
           </div>

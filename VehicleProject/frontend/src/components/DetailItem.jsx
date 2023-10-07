@@ -24,13 +24,31 @@ const DetailItem = () => {
             </div>
             <div id="promote">Promoted</div>
             <div id="kmFuel">
-              <FontAwesomeIcon icon={faRoad} color="#6E6E6E" />
-              236 583 KM <FontAwesomeIcon icon={faGasPump} color="#6E6E6E" />
-              Diesel <FontAwesomeIcon icon={faCalendar} color="#6E6E6E" />
+              <FontAwesomeIcon
+                style={{ marginRight: 5 }}
+                icon={faRoad}
+                color="#a2c3b6"
+              />
+              236 583 KM{" "}
+              <FontAwesomeIcon
+                style={{ marginRight: 5 }}
+                icon={faGasPump}
+                color="#a2c3b6"
+              />
+              Diesel{" "}
+              <FontAwesomeIcon
+                style={{ marginRight: 5 }}
+                icon={faCalendar}
+                color="#a2c3b6"
+              />
               1999
             </div>
             <div id="place">
-              <FontAwesomeIcon icon={faLocationDot} color="#14DE5E" />
+              <FontAwesomeIcon
+                style={{ marginRight: 5 }}
+                icon={faLocationDot}
+                color="#14DE5E"
+              />
               Suceava(Radauti)
             </div>
             <div id="status">Updated 5h ago</div>

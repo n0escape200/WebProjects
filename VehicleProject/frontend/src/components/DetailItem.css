@@ -3,6 +3,10 @@
   border: 0.01em solid black;
   align-items: center;
   padding: 5px;
+  background: #313e56;
+  border: 0.2em solid white;
+  border-radius: 15px 0 15px 0;
+  color: white;
 }
 
 .DetailItemContainer > .content > .details {
@@ -27,8 +31,8 @@
   font-size: 21px;
 }
 #underDesc {
-  color: grey;
-  font-size: 14px;
+  color: #a2c3b6;
+  font-size: 17px;
 }
 #promote {
   background-color: #10e0c4;

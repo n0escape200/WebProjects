@@ -37,6 +37,7 @@ const Dropdown = ({ options, onSelect, tag = "Select..." }) => {
   const handleClickOutside = (event) => {
     if (!clickRef.current.contains(event.target)) {
       setVisible(false);
+      setSearch("");
     }
   };
 
@@ -86,6 +87,7 @@ const Dropdown = ({ options, onSelect, tag = "Select..." }) => {
           <FontAwesomeIcon
             onClick={() => {
               setVisible(!visible);
+              setSearch("");
             }}
             icon={faChevronUp}
           />

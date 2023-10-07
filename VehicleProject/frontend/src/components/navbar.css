@@ -1,3 +1,9 @@
+.NavBarContainer {
+  background-color: #313e56;
+  color: white;
+  box-shadow: 0px 1px 5px 4px rgba(0, 0, 0, 0.21);
+}
+
 .NavBarContainer > .container {
   display: flex;
   justify-content: space-between;
@@ -22,17 +28,26 @@
   position: relative;
 }
 .sellBtn {
-  background-color: rgb(114, 204, 225);
+  background-color: #b1624e;
+  border: 0.01em solid white;
+  border-radius: 10px 0px 10px 0px;
   text-shadow: 1px 1px 1px black;
   padding: 10px;
   color: white;
 }
 
+.sellBtn:hover {
+  color: #a2c3b6;
+  transition: 0.5s;
+  cursor: pointer;
+  scale: 1.1;
+}
+
 #icon:hover {
-  color: aqua;
+  color: #b1624e;
   cursor: pointer;
   scale: 1.5;
-  transition: 0.3s;
+  transition: 0.1s;
 }
 
 #icon:active {
@@ -42,8 +57,12 @@
 .auth {
   position: absolute;
   top: 150%;
-  border: 0.01em solid black;
+  border: 0.2em solid white;
+  border-radius: 10px 10px 10px 10px;
   padding: 15px;
+  background-color: #313e56;
+  font-size: 18px;
+  text-shadow: 2px 3px 15px #a2c3b6;
 }
 
 #reg {
@@ -61,4 +80,36 @@
   scale: 1.1;
   color: green;
   transition: 1s;
+}
+
+.authLabel {
+  margin-top: 10px;
+}
+
+#username,
+#password {
+  background: #313e56;
+  border: none;
+  outline-width: 0;
+  color: white;
+  border-bottom: 0.01em solid white;
+  padding: 5px;
+  font-size: 17px;
+}
+
+#login {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 23px;
+  padding: 5px 10px 5px 10px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+#login:hover {
+  transition: 0.2s;
+  background-color: #a2c3b6;
+  color: #313e56;
+  cursor: pointer;
 }

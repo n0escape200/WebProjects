@@ -14,7 +14,9 @@ const navbar = () => {
     const info = {
       username: username,
       password: password,
+      withCredentials: true,
     };
+
     await axios
       .post("http://localhost:5500/api_V1.0/auth/login", info, {
         withCredentials: true,
@@ -71,7 +73,8 @@ const navbar = () => {
                     <input
                       style={{ marginTop: 20 }}
                       type="button"
-                      value="Login"
+                      value="LogIn"
+                      id="login"
                       onClick={() => {
                         logIn();
                       }}

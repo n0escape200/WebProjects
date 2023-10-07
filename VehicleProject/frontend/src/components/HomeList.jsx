@@ -10,11 +10,11 @@ const HomeList = () => {
 
   useEffect(() => {
     if (icon) {
-      document.getElementById("viewIcons1").style.color = "#a1e3ff";
-      document.getElementById("viewIcons2").style.color = "black";
+      document.getElementById("viewIcons1").style.color = "white";
+      document.getElementById("viewIcons2").style.color = "#313e56";
     } else {
-      document.getElementById("viewIcons1").style.color = "black";
-      document.getElementById("viewIcons2").style.color = "#a1e3ff";
+      document.getElementById("viewIcons1").style.color = "#313e56";
+      document.getElementById("viewIcons2").style.color = "white";
     }
   }, [icon]);
   const widthRef = useRef();

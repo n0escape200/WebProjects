@@ -1,10 +1,23 @@
-.BigfilterContainer > .filter {
-  background-color: #e0e0e0;
+.filter {
+  background-color: #ededed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropdowns {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: space-evenly;
-  padding: 50px 150px 50px 150px;
+  padding: 20px 400px 20px 400px;
+}
+
+.bottomFilter {
+  display: flex;
+  gap: 25px;
+  padding: 10px;
+  align-items: center;
 }
 
 .results {
@@ -12,4 +25,19 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+#filterSubmit {
+  padding: 8px 20px 8px 20px;
+  font-size: 21px;
+  color: white;
+  border: none;
+  background-color: #313e56;
+  border-radius: 10px 0 10px 0;
+}
+
+#filterSubmit:hover {
+  cursor: pointer;
+  color: #a2c3b6;
+  transition: 0.2s;
 }

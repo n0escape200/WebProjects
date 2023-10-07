@@ -5,7 +5,9 @@
 
 .containerSearch {
   margin-top: 25px;
-  padding: 10px;
+  padding: 30px;
+  border: 0.3em solid #313e56;
+  border-radius: 15px 0 15px 15px;
 }
 .containerSearch > .top {
   display: flex;
@@ -13,25 +15,23 @@
   height: 80px;
 }
 .spacer {
-  border-left: 1px solid grey;
-  height: 80px;
+  width: 8px;
 }
 .topLabel {
   display: flex;
   flex-direction: column;
   height: 100%;
   gap: 10px;
-  padding: 0 40px 0 40px;
+  padding: 5px 40px 5px 40px;
   align-items: center;
+  background: #313e56;
+  justify-content: center;
+  border-radius: 0 15px 0 15px;
 }
 
 .topLabel:hover {
   cursor: pointer;
   color: #a1e3ff;
-}
-
-.containerSearch {
-  border: 0.01em solid #eeeeee;
 }
 
 .middleLabel {
@@ -49,7 +49,8 @@
 
 .filterLabel {
   width: 42%;
-  padding: 20px;
+  margin: auto;
+  padding: 20px 0 20px 0;
   float: left;
 }
 
@@ -57,18 +58,27 @@
   width: fit-content;
   margin: auto;
   font-size: 23px;
-  background-color: red;
-  border: 0.01em solid #ff5c5c;
+  background-color: #313e56;
   padding: 10px 50px 10px 50px;
-  border-radius: 0.2em;
+  border-radius: 15px 0 15px 0;
   color: white;
+  letter-spacing: 2px;
 }
 
 .filterButton:hover {
   cursor: pointer;
-  background-color: blue;
+  background-color: #b1624e;
+  transition: 0.2s;
 }
 
 .filterButton:active {
   background-color: grey;
+}
+
+#labelText {
+  color: white;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-shadow: 0px 2px 10px #313e56;
 }

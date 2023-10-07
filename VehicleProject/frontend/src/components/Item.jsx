@@ -32,7 +32,15 @@ const Item = ({ view }) => {
 
       <div className="rightSide">
         <div className="description">
-          <div id="head">The title of the fucking car</div>
+          <div
+            style={{
+              color: "white",
+              textShadow: "0px 0px 15px rgba(255,255,255,1)",
+            }}
+            id="head"
+          >
+            The title of the fucking car
+          </div>
           <div id="info">•2020</div>
           <div id="info">•8600 km</div>
           <div id="info">•Diesel</div>
