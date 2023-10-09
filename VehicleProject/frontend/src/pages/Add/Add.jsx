@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../../components/navbar.jsx";
 import "./../Add/Add.css";
 import Dropdown from "../../components/Dropdown.jsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
 const Add = () => {
+  const [count, setCount] = useState(0);
+  const [array, setArray] = useState([]);
   return (
     <div className="addContainer">
       <Navbar />
@@ -113,6 +117,36 @@ const Add = () => {
             <div style={{ width: "48%" }}>
               <div>Color</div>
               <Dropdown onSelect={(value) => {}} width={"100%"} />
+            </div>
+          </div>
+          <div>
+            Photos
+            <div>
+              <FontAwesomeIcon icon={faCamera} />
+              {count}/40
+            </div>
+          </div>
+          <div>
+            <input
+              type="file"
+              name="image"
+              onChange={(event) => {
+                setArray([...array, event.target.value]);
+                setCount(count + 1);
+                console.log(array);
+              }}
+            />
+            <div>
+              {count > 0 &&
+                array.map((index, value) => {
+                  return (
+                    <img
+                      key={index}
+                      src={URL.createObjectURL(array[value])}
+                      alt="Image"
+                    />
+                  );
+                })}
             </div>
           </div>
         </div>
