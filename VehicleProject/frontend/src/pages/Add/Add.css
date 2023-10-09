@@ -1,0 +1,7 @@
+.addContainer > .main {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 60px;
+  max-width: 750px;
+}

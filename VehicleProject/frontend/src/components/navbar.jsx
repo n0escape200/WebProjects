@@ -1,12 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faStar } from "@fortawesome/free-solid-svg-icons";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import "./navbar.css";
 
 const navbar = () => {
   const [auth, setAuth] = useState(false);
   const [form, setForm] = useState(false);
+
+  const location = useLocation();
 
   const logIn = async () => {
     const username = document.getElementById("username").value;
@@ -54,9 +57,11 @@ const navbar = () => {
               icon={faUser}
             />
           </div>
-          <span className="sellBtn" id="text">
-            + Sell now
-          </span>
+          {String(location.pathname).toLowerCase() != "/add" && (
+            <span className="sellBtn" id="text">
+              + Sell now
+            </span>
+          )}
           {auth && (
             <>
               <div className="auth">

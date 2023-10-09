@@ -3,7 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import "./Dropdown.css";
 
-const Dropdown = ({ options, onSelect, tag = "Select..." }) => {
+const Dropdown = ({
+  options = [],
+  onSelect,
+  tag = "Select...",
+  width = 175,
+}) => {
   useEffect(() => {
     onSelect(null);
   }, []);
@@ -60,8 +65,15 @@ const Dropdown = ({ options, onSelect, tag = "Select..." }) => {
     onSelect(value);
   };
 
+  const minWidth = width < 175 ? 175 : width;
+
   return (
-    <div value={topOption} ref={clickRef} className="dropdownContainer">
+    <div
+      style={{ width: minWidth }}
+      value={topOption}
+      ref={clickRef}
+      className="dropdownContainer"
+    >
       <div className="dropdown">
         {visible ? (
           <input
