@@ -10,6 +10,7 @@ import {
   faLocationDot,
   faMessage,
   faPhone,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 const Result = () => {
   const photos = [
@@ -28,7 +29,7 @@ const Result = () => {
     <div className="resultContainer">
       <Navbar />
       <div className="mainContent">
-        <div style={{ display: "flex", justifyContent: "center", gap: 50 }}>
+        <div style={{ display: "flex", justifyContent: "center", gap: 20 }}>
           <div className="left">
             <div className="photoGallery">
               <div className="mainPhoto">
@@ -73,48 +74,96 @@ const Result = () => {
               </div>
               <div
                 style={{
-                  color: "#ff0000",
+                  color: "#b1624e",
                   fontSize: 40,
                   fontWeigh: 600,
-                  textShadow: "2px 2px 3px #FF0000",
                 }}
               >
                 20 540 EUR
               </div>
             </div>
             <div className="dealerInfo">
-              <div id="dealerName">Maricia Vericu</div>
-              <div id="dealerType">
-                <FontAwesomeIcon icon={faHandshake} />
-                Private dealer
-              </div>
-              <div id="dealerHistory">
-                <FontAwesomeIcon icon={faCalendar} />
-                Selling sicen 120 B.C
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 10,
+                }}
+              >
+                <div id="dealerName">
+                  <FontAwesomeIcon style={{ marginRight: 10 }} icon={faUser} />
+                  Maricia Vericu
+                </div>
+                <div id="dealerType">
+                  <FontAwesomeIcon
+                    style={{ marginRight: 10 }}
+                    icon={faHandshake}
+                  />
+                  Private dealer
+                </div>
+                <div id="dealerHistory">
+                  <FontAwesomeIcon
+                    style={{ marginRight: 10 }}
+                    icon={faCalendar}
+                  />
+                  Selling since 120 B.C
+                </div>
               </div>
               <div id="msg">
-                <FontAwesomeIcon icon={faMessage} color="white" />
+                <FontAwesomeIcon
+                  style={{ marginRight: 10 }}
+                  icon={faMessage}
+                  color="#313e56"
+                />
                 Send a message
               </div>
               <div id="phone">
-                <FontAwesomeIcon icon={faPhone} color="#0593ff" />
+                <FontAwesomeIcon
+                  style={{ marginRight: 10 }}
+                  icon={faPhone}
+                  color="white"
+                />
                 See phone number
               </div>
               <div id="location">
-                <FontAwesomeIcon icon={faLocationDot} />
+                <FontAwesomeIcon
+                  style={{ marginRight: 10 }}
+                  icon={faLocationDot}
+                />
                 Romania,Sucava,Radauti,Petre Liciu 41
               </div>
               <div id="other">
-                <FontAwesomeIcon icon={faHandshake} />
+                <FontAwesomeIcon
+                  style={{ marginRight: 10 }}
+                  icon={faHandshake}
+                />
                 See other 69420 deals from this person
               </div>
             </div>
           </div>
         </div>
         <div className="under">
-          <div style={{ fontSize: 27 }}>Description</div>
+          <div
+            style={{
+              fontSize: 42,
+              color: "white",
+              letterSpacing: 1,
+              fontWeight: 600,
+              textShadow: "2px 2px 5px #000000",
+            }}
+          >
+            Description
+          </div>
           <p
-            style={{ fontSize: 17, border: "0.01em solid black", padding: 15 }}
+            style={{
+              fontSize: 17,
+              border: "0.2em solid white",
+              padding: 20,
+              background: "#313e56",
+              color: "white",
+              letterSpacing: 1,
+              boxShadow: "inset 0px 0px 36px -5px white",
+            }}
           >
             Vestibulum ut tempor lorem. Proin tristique augue quis sapien
             efficitur, ac placerat libero tristique. Duis tincidunt aliquet
