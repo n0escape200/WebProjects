@@ -1,7 +1,8 @@
+import "./../Add/Add.css";
 import React, { useState } from "react";
 import Navbar from "../../components/navbar.jsx";
-import "./../Add/Add.css";
 import Dropdown from "../../components/Dropdown.jsx";
+import Upload from "../../components/Upload.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
@@ -124,31 +125,10 @@ const Add = () => {
             <div>
               <FontAwesomeIcon icon={faCamera} />
               {count}/40
+              <Upload />
             </div>
           </div>
-          <div>
-            <input
-              type="file"
-              name="image"
-              onChange={(event) => {
-                setArray([...array, event.target.value]);
-                setCount(count + 1);
-                console.log(array);
-              }}
-            />
-            <div>
-              {count > 0 &&
-                array.map((index, value) => {
-                  return (
-                    <img
-                      key={index}
-                      src={URL.createObjectURL(array[value])}
-                      alt="Image"
-                    />
-                  );
-                })}
-            </div>
-          </div>
+          <div></div>
         </div>
       </div>
     </div>
