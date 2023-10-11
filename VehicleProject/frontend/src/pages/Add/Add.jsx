@@ -7,8 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
 const Add = () => {
-  const [count, setCount] = useState(0);
-  const [array, setArray] = useState([]);
   return (
     <div className="addContainer">
       <Navbar />
@@ -123,8 +121,6 @@ const Add = () => {
           <div>
             Photos
             <div>
-              <FontAwesomeIcon icon={faCamera} />
-              {count}/40
               <Upload />
             </div>
           </div>

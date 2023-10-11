@@ -5,9 +5,5 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-#previewImg {
-  aspect-ratio: 16/10;
-  width: 120px;
+  padding: 25px;
 }

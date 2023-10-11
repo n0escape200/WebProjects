@@ -1,13 +1,26 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faCamera, faPlus } from "@fortawesome/free-solid-svg-icons";
+import Photo from "./photo.jsx";
 import "./Upload.css";
+import photo from "./photo.jsx";
+
 const Upload = () => {
   const fileRef = useRef(null);
   const [photos, setPhotos] = useState([]);
 
+  const removePhoto = (url) => {
+    const updatedPhotos = photos.filter((photo) => photo != url);
+    setPhotos(updatedPhotos);
+  };
+
   return (
     <div className="uploadContainer">
+      <div style={{ display: "inline-flex" }}>
+        <div>{photos.length}/20</div>
+        <FontAwesomeIcon icon={faCamera} />
+      </div>
+
       <div className="fileInput">
         <input
           ref={fileRef}
@@ -17,7 +30,14 @@ const Upload = () => {
             setPhotos([...photos, URL.createObjectURL(event.target.files[0])]);
           }}
         />
-        <div>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 15,
+            alignItems: "center",
+          }}
+        >
           {photos.length == 0 && (
             <div
               onClick={() => {
@@ -44,11 +64,36 @@ const Upload = () => {
             </div>
           )}
 
-          {photos.map((index, value) => {
-            return (
-              <img id="previewImg" key={index} src={photos[value]} alt="" />
-            );
-          })}
+          {photos.map((photoUrl, index) => (
+            <Photo
+              selected={(value) => {
+                if (value) {
+                  removePhoto(photoUrl);
+                }
+              }}
+              source={photoUrl}
+              key={index}
+            />
+          ))}
+          {photos.length != 0 && photos.length < 20 && (
+            <>
+              <div
+                onClick={() => {
+                  fileRef.current.click();
+                }}
+                style={{
+                  fontSize: 70,
+                  color: "#313e56",
+                  width: 135,
+                  textAlign: "center",
+                  border: "0.1em dashed #313e56",
+                }}
+                id="plus"
+              >
+                +
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
