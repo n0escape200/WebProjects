@@ -1,3 +1,7 @@
+.addContainer {
+  margin-bottom: 5em;
+}
+
 .addContainer > .main {
   display: flex;
   flex-direction: column;

@@ -1,10 +1,13 @@
 .fileInput {
-  width: 50%;
-  padding: 75px;
   display: flex;
   justify-content: center;
   border: 0.25em dashed white;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#previewImg {
+  aspect-ratio: 16/10;
+  width: 120px;
 }
