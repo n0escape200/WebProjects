@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera, faPlus } from "@fortawesome/free-solid-svg-icons";
 import Photo from "./photo.jsx";
+import Dropdown from "./Dropdown";
 import "./Upload.css";
 import photo from "./photo.jsx";
 

@@ -106,7 +106,7 @@ const Dropdown = ({
         )}
       </div>
       {visible && (
-        <div className="menu">
+        <div className="menu" style={{ width: minWidth }}>
           {filteredArray.map((element, index) => {
             return (
               <span onClick={handleOptionClicked} id="option" key={index}>
