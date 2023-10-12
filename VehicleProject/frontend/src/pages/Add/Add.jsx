@@ -91,9 +91,9 @@ const Add = () => {
           </div>
           <div>
             <div id="labelText">Date</div>
-            <Calendar />
             <div
               style={{
+                position: "relative",
                 color: "white",
                 fontSize: 21,
                 display: "inline-flex",
@@ -124,6 +124,9 @@ const Add = () => {
                   setOpenDate(true);
                 }}
               />
+              <div style={{ position: "absolute", right: -60, top: 30 }}>
+                <Calendar active={true} />
+              </div>
             </div>
           </div>
           <div
