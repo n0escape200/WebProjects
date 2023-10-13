@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Calendar.css";
 
 const monthArray = [
@@ -23,6 +23,7 @@ const getCurrentDate = () => {
 };
 
 const Calendar = () => {
+  //*
   const [day, setDay] = useState();
   const [month, setMonth] = useState();
   const [year, setYear] = useState();
@@ -34,11 +35,50 @@ const Calendar = () => {
     setYear(getCurrentDate()[2]);
   }, []);
 
+  const [yearTab, setYearTab] = useState(false);
+
+  const yearRef = Array(105).fill(useRef(null));
+
+  useEffect(() => {
+    for (let i = 0; i < yearRef.length; i++) {
+      const ref = yearRef[i];
+      if (ref.current.value) {
+      }
+    }
+  }, [year]);
+
   return (
     <div className="calendarContainer">
       <div className="main">
-        <div className="top">
-          <div>{year}</div>
+        <div style={{ position: "relative" }} className="top">
+          <div
+            className="currentYear"
+            onClick={() => {
+              setYearTab(!yearTab);
+            }}
+          >
+            {year}
+          </div>
+          {yearTab && (
+            <div className="years">
+              {Array.from({ length: 105 }, (_, i) => {
+                console.log(i);
+                return (
+                  <div
+                    ref={yearRef[i]}
+                    key={i}
+                    onClick={(event) => {
+                      setYear(event.target.textContent);
+                      setYearTab(false);
+                    }}
+                    className="year"
+                  >
+                    {getCurrentDate()[2] - i}
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
         <div style={{ display: "inline-flex", gap: 10 }} className="middle">
           <div>{"<"}</div>
@@ -47,7 +87,7 @@ const Calendar = () => {
         </div>
         <div className="bottom">
           {Array.from({ length: lastDay }, (_, i) => {
-            return <div>{i + 1}</div>;
+            return <div key={i}>{i + 1}</div>;
           })}
         </div>
       </div>
