@@ -1,3 +1,8 @@
+.calendarContainer {
+  position: absolute;
+  top: 30px;
+}
+
 .calendarContainer > .main {
   background: #313e56;
   z-index: 1;
@@ -12,8 +17,10 @@
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
-  justify-content: space-around;
+  gap: 10px;
+  border: 0.1em solid white;
+  padding: 10px;
+  width: 250px;
 }
 
 .years {
@@ -34,13 +41,30 @@
   padding: 2px;
 }
 
-.year:hover {
+.year:hover,
+.month:hover {
   cursor: pointer;
-  background: #313e56;
+  background: #b1624e;
   color: white;
 }
 
 .currentYear:hover {
   cursor: pointer;
   color: #a2c3b6;
+}
+
+.monthText:hover {
+  color: #b1624e;
+  cursor: pointer;
+}
+
+.day {
+  background-color: white;
+  color: #313e56;
+  min-width: 25px;
+  text-align: center;
+  border-radius: 2px;
+}
+.day:hover {
+  cursor: pointer;
 }

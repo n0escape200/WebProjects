@@ -8,8 +8,9 @@ import Calendar from "../../components/Calendar.jsx";
 import { faCalendar, faCamera } from "@fortawesome/free-solid-svg-icons";
 
 const Add = () => {
-  const [date, setDate] = useState(["Year", "Month", "Day"]);
-  const [openDate, setOpenDate] = useState(false);
+  const [date, setDate] = useState(["Day", "Month", "Year"]);
+  const [active, setActive] = useState(false);
+
   const dateRef = useRef();
   return (
     <div className="addContainer">
@@ -101,11 +102,11 @@ const Add = () => {
                 fontWeight: 600,
               }}
             >
-              {date[2]}
+              {date[0]}
               <div>/</div>
               {date[1]}
               <div>/</div>
-              {date[0]}
+              {date[2]}
               <FontAwesomeIcon
                 icon={faCalendar}
                 onMouseOver={(event) => {
@@ -121,12 +122,16 @@ const Add = () => {
                   item.scale = 1;
                 }}
                 onClick={() => {
-                  setOpenDate(true);
+                  setActive(!active);
                 }}
               />
-              <div style={{ position: "absolute", right: -60, top: 30 }}>
-                <Calendar active={true} />
-              </div>
+              <Calendar
+                active={active}
+                onSelect={(date) => {
+                  setDate(date);
+                  console.log(date);
+                }}
+              />
             </div>
           </div>
           <div
